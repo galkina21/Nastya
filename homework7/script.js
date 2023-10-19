@@ -25,7 +25,7 @@ function fullsum() {
     for (let i = 0; i < maxAttempts; i++) {
       const num = prompt(`Введіть число більше 100`);
       if (num === null) {
-        console.log('Вихід з циклу');
+        console.log('Користувач нічого не ввів. Вихід з циклу');
         break;
       }
       
@@ -35,9 +35,13 @@ function fullsum() {
         break;
       } else {
         console.log('Введене число менше 100 або не є числом');
+        final = num;
       }
       if (i === maxAttempts - 1) {
-        console.log('Вихід з циклу');
+        console.log('Всі спроби вичерпано. Вихід з циклу');
+        if (final !== null) {
+          console.log(`Останнє введення користувача: ${final}`);
+        }
       }
     }
   }
